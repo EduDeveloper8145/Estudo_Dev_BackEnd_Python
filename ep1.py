@@ -55,7 +55,7 @@ def cadastrar_novo_restaurante():
 
 def listar_novos_restaurantes():
     exibir_subtitulos('Listagem de Restaurantes')
-    print(f'{'RESTAURANTES'.ljust(22)^20} | {'CATEGORIA'.ljust(20)^20} | {'SITUAÇÃO'^20}')
+    print(f'{"RESTAURANTES".ljust(22)} | {"CATEGORIA".ljust(20)} | {"SITUAÇÃO"}')
     for restaurante in restaurantes:
         nome_restaurante = restaurante['nome']
         categoria =  restaurante['categoria']
@@ -103,7 +103,8 @@ def escolher_opcao():
             finalizar_app()
         else:
             opcao_invalida()
-    except:
+            
+    except ValueError:
         opcao_invalida()
         
 def main():
