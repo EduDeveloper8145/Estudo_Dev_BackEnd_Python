@@ -89,6 +89,15 @@ def cadastrar_novo_restaurante():
     print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso!')
     voltar_ao_menu_principal()
 
+def lista_dos_restaurantes():
+    print(f'{"RESTAURANTES".ljust(22)} | {"CATEGORIA".ljust(20)} | {"SITUAÇÃO"}')
+    for restaurante in restaurantes:
+        nome_restaurante = restaurante['nome']
+        categoria =  restaurante['categoria']
+        ativo = 'ativado' if restaurante['ativo'] else 'desativado'
+        print(f'. {nome_restaurante.ljust(20)} | {categoria.ljust(20)} | {ativo}')
+    print('\n')
+    
 def listar_novos_restaurantes():
     '''
     Função para listar os restaurantes cadastrados e sua situação cadastral
@@ -115,6 +124,7 @@ def alterando_estado_do_restaurante():
     '''
 
     exibir_subtitulos('Atualizando Estado do Restaurante')
+    lista_dos_restaurantes()
     nome_restaurante = input('Digite o nome do restaurante que deseja ativar/desativar estado: ')
     restaurante_encontrado = False
 
